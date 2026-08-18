@@ -23,13 +23,13 @@
     iframe { 
       border: 0; 
       width: 100vw; 
-      /* Make the iframe shorter by exactly the height of the iPhone home bar */
-      height: calc(100vh - env(safe-area-inset-bottom));
+      /* Only pull up by 12px instead of the massive 34px safe-area height */
+      height: calc(100vh - 12px);
       position: absolute;
       top: 0; left: 0; right: 0; 
       background-color: transparent;
       
-      /* Push the top down for the status bar */
+      /* Keep top padding for the status bar */
       padding-top: env(safe-area-inset-top);
       box-sizing: border-box;
     }
