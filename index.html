@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
+      height: 100dvh; /* Uses dynamic viewport height to adjust for mobile bars */
       background: #0f1318;
       overflow: hidden;
     }
@@ -23,6 +23,9 @@
       width: 100%;
       height: 100%;
       display: block;
+      /* Ensures the content safely clears the iPhone status bar at the top */
+      padding-top: env(safe-area-inset-top);
+      box-sizing: border-box;
     }
   </style>
 </head>
