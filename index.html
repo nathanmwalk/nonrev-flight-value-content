@@ -23,14 +23,15 @@
     iframe { 
       border: 0; 
       width: 100vw; 
-      /* Only pull up by 12px instead of the massive 34px safe-area height */
-      height: calc(100vh - 12px);
+      /* Make the iframe take up the full 100% height so it never cuts off content */
+      height: 100vh;
       position: absolute;
-      top: 0; left: 0; right: 0; 
+      top: 0; left: 0; right: 0; bottom: 0;
       background-color: transparent;
       
-      /* Keep top padding for the status bar */
+      /* Only pad the top for the status bar. Let the bottom reach the glass edge. */
       padding-top: env(safe-area-inset-top);
+      padding-bottom: 0;
       box-sizing: border-box;
     }
   </style>
