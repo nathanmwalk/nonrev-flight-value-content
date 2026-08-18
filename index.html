@@ -7,13 +7,35 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#0f1318">
+  
+  <!-- SECURITY: Prevents Google/Bing from indexing this page -->
+  <meta name="robots" content="noindex, nofollow">
+  
   <title>Nonrev Flights</title>
   <style>
-    html,body{margin:0;height:100%;background:#0f1318;overflow:hidden;}
-    iframe{border:0;width:100%;height:100%;display:block;}
+    html, body { 
+      margin: 0; 
+      padding: 0;
+      /* 100dvh dynamically adjusts to Safari's bottom toolbar, fixing the bottom gap */
+      height: 100dvh; 
+      background: #0f1318; 
+      overflow: hidden; 
+    }
+    iframe { 
+      border: 0; 
+      width: 100%; 
+      height: 100%; 
+      display: block; 
+      
+      /* Apply safe areas to the iframe container, not the inner app */
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
+  <!-- Replace with your actual Google Apps Script Web App URL -->
   <iframe src="https://script.google.com/macros/s/AKfycbye7nPL93CdySNFZVho3YtVE5Pa-gSKuSj1HIXpQqoRcXwLbBNtGMyiAWFuJA0JSczYzQ/exec" allow="clipboard-write"></iframe>
 </body>
 </html>
